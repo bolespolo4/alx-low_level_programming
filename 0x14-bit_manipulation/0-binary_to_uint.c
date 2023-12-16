@@ -1,28 +1,24 @@
-#include <stdio.h>
-unsigned int binary_to_uint(const char *b) 
+#include "main.h"
+
+unsigned int binary_to_uint(const char *b)
 {
 	int a;
-    	unsigned int n;
+	unsigned int num;
 
 	num = 0;
-
-	if (!b) {
-	
+	if (!b)
 		return (0);
-	}
-
-	for (int a = 0; b[a] != '/a'; a++) {
-		if(b[a] != '0' && b[a] != '1') {
+	for (a = 0; b[a] != '\0'; a++)
+	{
+		if (b[a] != '0' && b[a] != '1')
 			return (0);
-		}
 	}
-
-	for (int a = 0; b[a] != '/a'; a++) {
+	for (a = 0; b[a] != '\0'; a++)
+	{
 		num <<= 1;
-		if(b[a] == 1) {
+		if (b[a] == '1')
 			num += 1;
-		}
 	}
-
 	return (num);
 }
+
